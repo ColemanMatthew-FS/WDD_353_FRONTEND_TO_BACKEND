@@ -58,9 +58,10 @@ router.post("/register", async(req,res)=>{
             //it's printed to the console
         }).catch(err => {
             console.log(err.message)
+            errors.status = `Error! ${err.message}`
             res.render('register', {
                 pagename: 'Registration',
-                error: err.message
+                errors: errors
             })
         });
         //If the answers failed the regex validation...
