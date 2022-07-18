@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const validation = require("../validation/validation");
 const sessions = require('express-session');
-const getRegistration = require('../api/api/api');
+const getRegistration = require('../api/api');
 
 router.use(
     sessions({
