@@ -39,16 +39,23 @@ router.get("/register",(req,res)=>{
 });
 
 router.post("/register", async(req,res)=>{
+    //This validates the user's answers using regex
     errors = validation(req.body)
     console.log(errors)
     if(errors.status == "Registration Successful!"){
         const data = req.body;
+        //if the data is succesfully posted...
+        //then the user is taken home with the message now appearing
+        //on the home page
+        //the message (Registration Saved!) was added in the backend
         await getRegistration(data).then(result => {
             res.render('index', {
                 pagename: 'Home',
                 message: result.data.message,
                 sess: session,
             })
+            //if there's a server related error...
+            //it's printed to the console
         }).catch(err => {
             console.log(err.message)
             res.render('register', {
@@ -56,6 +63,9 @@ router.post("/register", async(req,res)=>{
                 error: err.message
             })
         });
+        //If the answers failed the regex validation...
+        //the user is dumped back at the registration screen...
+        //and the errors appear where applicable
     } else {
         res.render('register', {
             pagename: 'Registration',
