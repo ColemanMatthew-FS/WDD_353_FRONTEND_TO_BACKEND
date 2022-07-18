@@ -1,0 +1,30 @@
+{
+  "name": "wdd_353_frontend_to_backend",
+  "version": "1.0.0",
+  "description": "Connecting a dynamic website to a RESTful API to handle registration",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "start": "nodemon server"
+  },
+  "keywords": [
+    "RESTful",
+    "API",
+    "NodeJS",
+    "Bootstrap"
+  ],
+  "author": "Matthew Coleman",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "mongoose": "^6.4.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}

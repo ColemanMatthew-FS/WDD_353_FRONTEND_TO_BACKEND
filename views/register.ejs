@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title><%-pagename %></title>
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <%-include('includes/nav') %>
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('img/about-bg.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h1>Registration</h1>
+                            <span class="subheading">Sign up here.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <main>
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <form id="contactForm" action="/register" method="post">
+                            <%if(typeof(errors) != "undefined"){%>
+                            <span><%=errors.status%></span>
+                            <% } %>
+                            <div class="form-floating">
+                                <input class="form-control" id="firstName" name="firstName" type="text" placeholder="Enter your first name..."/>
+                                <%if(typeof(errors) != "undefined"){%>
+                                <span><%=errors.firstNameMsg%></span>
+                                <%}%>
+                                <label for="firstName">First Name</label>
+                            </div>
+                            <div class="form-floating">
+                                <input class="form-control" id="lastName" name="lastName" type="text" placeholder="Enter your last name..."/>
+                                <%if(typeof(errors) != "undefined"){%>
+                                <span><%=errors.lastNameMsg%></span>
+                                <% } %>
+                                <label for="lastName">Last Name</label>
+                            </div>
+                            <div class="form-floating">
+                                <input class="form-control" id="address" name="address" type="text" placeholder="Enter your address..."/>
+                                <%if(typeof(errors) != "undefined"){%>
+                                <span><%=errors.addressMsg%></span>
+                                <% } %>
+                                <label for="address">Address</label>
+                            </div>
+                            <div class="form-floating">
+                                <input class="form-control" id="city" name="city" type="text" placeholder="Enter your city..."/>
+                                <%if(typeof(errors) != "undefined"){%>
+                                <span><%=errors.cityMsg%></span>
+                                <% } %>
+                                <label for="city">City</label>
+                            </div>
+                            <div class="form-floating">
+                                <input class="form-control" id="state" name="state" type="text" placeholder="Enter your state..."/>
+                                <%if(typeof(errors) != "undefined"){%>
+                                <span><%=errors.stateMsg%></span>
+                                <% } %>
+                                <label for="state">State</label>
+                            </div>
+                            <div class="form-floating">
+                                <input class="form-control" id="zipcode" name="zipcode" type="text" placeholder="Enter your zip code..."/>
+                                <%if(typeof(errors) != "undefined"){%>
+                                <span><%=errors.zipMsg%></span>
+                                <% } %>
+                                <label for="zipcode">Zip Code</label>
+                            </div>
+                            <div class="form-floating">
+                                <select class="form-control" id="age" name="age" placeholder="Enter your age...">
+                                    <option value="">Select</option>
+                                    <option value="13-18">13-18</option>
+                                    <option value="18-30">18-30</option>
+                                    <option value="31-50">31-50</option>
+                                    <option value="50+">50+</option>
+                                </select>
+                                <%if(typeof(errors) != "undefined"){%>
+                                <span><%=errors.ageMsg%></span>
+                                <% } %>
+                                <label for="age">Age</label>
+                            </div>
+                            <div class="form-floating">
+                                <div>
+                                    <input type="radio" id="male" name="gender" value="male"/>
+                                    <label for="male">Male</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="female" name="gender" value="female"/>
+                                    <label for="female">Female</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="other" name="gender" value="other"/>
+                                    <label for="other">Other</label>
+                                </div>
+                                <%if(typeof(errors) != "undefined"){%>
+                                <span><%=errors.genderMsg%></span>
+                                <% } %>
+                            </div>
+                            <div class="form-floating">
+                                <div>
+                                    <input type="checkbox" id="consent" name="consent"/>
+                                    <label for="consent">Consent</label>
+                                </div>
+                                <%if(typeof(errors) != "undefined"){%>
+                                <span><%=errors.consentMsg%></span>
+                                <% } %>
+                            </div>
+                            <div class="form-floating">
+                                <textarea class="form-control" id="bio" name="bio" placeholder="Enter your bio..."></textarea>
+                                <%if(typeof(errors) != "undefined"){%>
+                                <span><%=errors.bioMsg%></span>
+                                <% } %>
+                                <label for="bio">Bio</label>
+                            </div>
+                            <br />
+                            <!-- Submit Button-->
+                            <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <%-include("includes/footer") %>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+    </body>
+</html>
+    
