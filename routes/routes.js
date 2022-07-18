@@ -41,7 +41,6 @@ router.get("/register",(req,res)=>{
 router.post("/register", async(req,res)=>{
     //This validates the user's answers using regex
     errors = validation(req.body)
-    console.log(errors)
     if(errors.status == "Registration Successful!"){
         const data = req.body;
         //if the data is succesfully posted...
