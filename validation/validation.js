@@ -47,7 +47,7 @@ function validation(input){
         errors.consentMsg = "Consent must be checked";
         valid = false;
     }
-    if (input.bio.length < 11){
+    if (input.bio.length < 10){
         errors.bioMsg = "Bio must have at least 10 characters";
         valid = false;
     }
